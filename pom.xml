@@ -15,7 +15,7 @@
 	<description>FinTech Core Engine Blueprint</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
 	</properties>
 

@@ -1,11 +1,9 @@
 package com.neoledger.core.domain.ledger;
 
-import lombok.Data;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
 @Table(name = "ledger_entries")
 public class LedgerEntry {
@@ -19,8 +17,9 @@ public class LedgerEntry {
     @Column(nullable = false)
     private BigDecimal amount;
 
+    @Column(name = "entry_type", nullable = false)
     @Enumerated(EnumType.STRING)
-    private EntryType type; // DEBIT or CREDIT
+    private EntryType type;
 
     private String transactionId;
     private LocalDateTime timestamp;
@@ -28,4 +27,17 @@ public class LedgerEntry {
     public enum EntryType {
         DEBIT, CREDIT
     }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public com.neoledger.core.domain.account.Account getAccount() { return account; }
+    public void setAccount(com.neoledger.core.domain.account.Account account) { this.account = account; }
+    public BigDecimal getAmount() { return amount; }
+    public void setAmount(BigDecimal amount) { this.amount = amount; }
+    public EntryType getType() { return type; }
+    public void setType(EntryType type) { this.type = type; }
+    public String getTransactionId() { return transactionId; }
+    public void setTransactionId(String transactionId) { this.transactionId = transactionId; }
+    public LocalDateTime getTimestamp() { return timestamp; }
+    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 }

@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/customers")
-@RequiredArgsConstructor
 @Tag(name = "Customers", description = "Customer Onboarding and KYC Management")
 public class CustomerController {
     private final CustomerRepository customerRepository;
+
+    public CustomerController(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     @PostMapping
     @Operation(summary = "Onboard a new customer", description = "Creates a customer profile and starts the KYC process.")

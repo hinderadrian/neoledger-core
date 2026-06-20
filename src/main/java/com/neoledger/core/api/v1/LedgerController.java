@@ -13,10 +13,13 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/api/v1/ledger")
-@RequiredArgsConstructor
 @Tag(name = "Ledger", description = "Core Double-Entry Accounting Operations")
 public class LedgerController {
     private final LedgerService ledgerService;
+
+    public LedgerController(LedgerService ledgerService) {
+        this.ledgerService = ledgerService;
+    }
 
     @PostMapping("/transfer")
     @Operation(summary = "Execute a balance transfer", description = "Performs a double-entry transfer between two accounts with idempotency check.")

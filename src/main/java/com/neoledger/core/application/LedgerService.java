@@ -15,17 +15,22 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class LedgerService {
     private final AccountRepository accountRepository;
     private final LedgerRepository ledgerRepository;
     private final TransactionRepository transactionRepository;
 
+    public LedgerService(AccountRepository accountRepository, LedgerRepository ledgerRepository, TransactionRepository transactionRepository) {
+        this.accountRepository = accountRepository;
+        this.ledgerRepository = ledgerRepository;
+        this.transactionRepository = transactionRepository;
+    }
+
     @Transactional
     public Transaction executeTransfer(String fromAccountNo, String toAccountNo, BigDecimal amount, String idempotencyKey) {
         // 1. Idempotency Check
-        var existingTx = transactionRepository.findByIdempotencyKey(idempotencyKey);
-        if (existingTx.isPresent()) return existingTx.get();
+        Transaction existingTx = transactionRepository.findByIdempotencyKey(idempotencyKey).orElse(null);
+        if (existingTx != null) return existingTx;
 
         // 2. Fetch Accounts
         Account fromAccount = accountRepository.findByAccountNumber(fromAccountNo)

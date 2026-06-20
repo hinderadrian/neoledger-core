@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
 @Table(name = "accounts")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -33,4 +32,17 @@ public abstract class Account {
     }
 
     public abstract boolean canWithdraw(BigDecimal amount);
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getAccountNumber() { return accountNumber; }
+    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
+    public BigDecimal getBalance() { return balance; }
+    public void setBalance(BigDecimal balance) { this.balance = balance; }
+    public com.neoledger.core.domain.customer.Customer getCustomer() { return customer; }
+    public void setCustomer(com.neoledger.core.domain.customer.Customer customer) { this.customer = customer; }
+    public AccountStatus getStatus() { return status; }
+    public void setStatus(AccountStatus status) { this.status = status; }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }

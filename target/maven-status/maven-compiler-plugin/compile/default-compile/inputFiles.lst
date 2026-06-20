@@ -1,0 +1,16 @@
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\account\CheckingAccount.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\application\LedgerService.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\api\v1\LedgerController.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\transaction\Transaction.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\infrastructure\persistence\LedgerRepository.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\NeoLedgerApplication.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\customer\Customer.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\api\v1\CustomerController.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\account\Account.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\ledger\LedgerEntry.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\account\EscrowAccount.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\infrastructure\persistence\CustomerRepository.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\infrastructure\persistence\TransactionRepository.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\infrastructure\persistence\AccountRepository.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\account\SavingsAccount.java
+C:\repos\neoledger-core\src\main\java\com\neoledger\core\domain\account\InvestmentAccount.java
